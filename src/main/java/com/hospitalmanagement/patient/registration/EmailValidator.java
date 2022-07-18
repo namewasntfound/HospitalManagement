@@ -1,4 +1,4 @@
-package com.hospitalmanagement.registration;
+package com.hospitalmanagement.patient.registration;
 
 import org.springframework.stereotype.Service;
 

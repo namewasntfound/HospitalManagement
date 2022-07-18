@@ -1,11 +1,11 @@
-package com.hospitalmanagement.registration;
+package com.hospitalmanagement.patient.registration;
 
 import com.hospitalmanagement.appuser.AppUser;
 import com.hospitalmanagement.appuser.AppUserRole;
 import com.hospitalmanagement.appuser.AppUserService;
 import com.hospitalmanagement.email.EmailSender;
-import com.hospitalmanagement.registration.token.ConfirmationToken;
-import com.hospitalmanagement.registration.token.ConfirmationTokenService;
+import com.hospitalmanagement.patient.registration.token.ConfirmationToken;
+import com.hospitalmanagement.patient.registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

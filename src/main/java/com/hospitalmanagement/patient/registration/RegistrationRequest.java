@@ -1,4 +1,4 @@
-package com.hospitalmanagement.registration;
+package com.hospitalmanagement.patient.registration;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

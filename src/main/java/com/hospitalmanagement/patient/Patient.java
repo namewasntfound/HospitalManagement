@@ -1,12 +1,15 @@
 package com.hospitalmanagement.patient;
 
 
+import com.hospitalmanagement.patient.address.Address;
 import com.hospitalmanagement.patient.person.Person;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+
+import java.time.LocalDate;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -22,4 +25,7 @@ public class Patient extends Person {
     @Column(nullable = false)
     private Long id;
 
+    public Patient(String UCN, String firstName, String middleName, String lastName, LocalDate dob, Address address, String phoneNumber) {
+        super(UCN, firstName, middleName, lastName, dob, address, phoneNumber);
+    }
 }

@@ -16,18 +16,20 @@ import java.time.Period;
 @EqualsAndHashCode
 @MappedSuperclass
 public class Person {
+    @Column(unique = true, nullable = false)
     private String UCN; // Unique citizen number
-
+    @Column(nullable = false)
     private String firstName;
 
     private String middleName;
-
+    @Column(nullable = false)
     private String lastName;
-
+    @Column(nullable = false)
     private LocalDate dob;
-
+    @Column(nullable = false)
     private Integer age;
     @Embedded
+    @Column(nullable = false)
     private Address address;
 
     private String phoneNumber;

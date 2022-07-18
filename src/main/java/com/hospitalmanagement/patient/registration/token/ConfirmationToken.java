@@ -1,4 +1,4 @@
-package com.hospitalmanagement.registration.token;
+package com.hospitalmanagement.patient.registration.token;
 
 import com.hospitalmanagement.appuser.AppUser;
 import lombok.Getter;

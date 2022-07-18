@@ -1,7 +1,7 @@
 package com.hospitalmanagement.appuser;
 
-import com.hospitalmanagement.registration.token.ConfirmationToken;
-import com.hospitalmanagement.registration.token.ConfirmationTokenService;
+import com.hospitalmanagement.patient.registration.token.ConfirmationToken;
+import com.hospitalmanagement.patient.registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

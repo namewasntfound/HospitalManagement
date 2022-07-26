@@ -18,7 +18,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@Entity(name = "users")
+@Entity
 public class AppUser implements UserDetails {
 
     @Id

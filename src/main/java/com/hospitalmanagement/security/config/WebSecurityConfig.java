@@ -18,6 +18,15 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class WebSecurityConfig {
 
+    private static final String[] MATCHERS = {
+            "/api/v*/registration/*",
+            "/js/**",
+            "/css/**",
+            "/images/**",
+            "/assets/**",
+            "/api/v*/patients/*"
+    };
+
     private final AppUserService appUserService;
     private final BCryptPasswordEncoder passwordEncoder;
 
@@ -26,11 +35,16 @@ public class WebSecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/v*/registration/*", "/js/**", "/css/**", "/images/**", "/api/v*/patients/*")
+                .antMatchers(MATCHERS)
                 .permitAll()
                 .anyRequest()
                 .authenticated().and()
-                .formLogin().loginPage("/login").permitAll().and().logout();
+                .formLogin()
+                .loginPage("/login")
+                .defaultSuccessUrl("/")
+                .permitAll()
+                .and()
+                .logout();
 
         return http.build();
     }

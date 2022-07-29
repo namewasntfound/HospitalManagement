@@ -1,5 +1,7 @@
 package com.hospitalmanagement.appuser;
 
+import com.hospitalmanagement.person.Person;
+import com.hospitalmanagement.person.address.Address;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +11,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -31,6 +34,7 @@ public class AppUser implements UserDetails {
     )
     @Getter
     private Long id;
+
     @Getter
     @Setter
     private String firstName;
@@ -47,19 +51,13 @@ public class AppUser implements UserDetails {
     private Boolean locked;
     private Boolean enabled;
 
-    public AppUser(String firstName,
-                   String lastName,
-                   String email,
-                   String password,
-                   AppUserRole appUserRole) {
 
+    public AppUser(String firstName, String lastName, String email, String password, AppUserRole appUserRole) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
-        this.enabled = false;
-        this.locked = false;
     }
 
     @Override
@@ -67,14 +65,6 @@ public class AppUser implements UserDetails {
         SimpleGrantedAuthority authority
                 = new SimpleGrantedAuthority(appUserRole.name());
         return Collections.singleton(authority);
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     @Override

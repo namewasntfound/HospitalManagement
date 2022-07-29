@@ -1,5 +1,6 @@
 package com.hospitalmanagement.registration;
 
+import com.hospitalmanagement.person.Person;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

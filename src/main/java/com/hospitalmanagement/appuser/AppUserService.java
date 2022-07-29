@@ -10,12 +10,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
+
+import static com.hospitalmanagement.exceptions.ExceptionMessages.USER_NOT_FOUND_MSG;
 
 @Service
 @AllArgsConstructor
 public class AppUserService implements UserDetailsService {
-    private static final String USER_NOT_FOUND_MSG = "User with %s email not found";
     private final AppUserRepository appUserRepository;
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -54,8 +56,8 @@ public class AppUserService implements UserDetailsService {
         return token;
     }
 
-    public int getDoctorCount() {
-        return appUserRepository.getDoctorCount();
+    public List<AppUser> getDoctors() {
+        return appUserRepository.findAppUserByAppUserRole(AppUserRole.DOCTOR);
     }
 
     public int enableAppUser(String email) {

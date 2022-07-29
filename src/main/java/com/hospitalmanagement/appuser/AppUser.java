@@ -14,8 +14,6 @@ import java.util.Collections;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
-@Getter
-@Setter
 @EqualsAndHashCode
 @NoArgsConstructor
 @Entity
@@ -31,10 +29,18 @@ public class AppUser implements UserDetails {
             strategy = SEQUENCE,
             generator = "user_sequence"
     )
+    @Getter
     private Long id;
+    @Getter
+    @Setter
     private String firstName;
+    @Getter
+    @Setter
     private String lastName;
+    @Getter
+    @Setter
     private String email;
+    @Setter
     private String password;
     @Enumerated(value = EnumType.STRING)
     private AppUserRole appUserRole;

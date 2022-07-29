@@ -1,7 +1,5 @@
 package com.hospitalmanagement;
 
-import com.hospitalmanagement.appuser.AppUserRepository;
-import com.hospitalmanagement.appuser.AppUserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
